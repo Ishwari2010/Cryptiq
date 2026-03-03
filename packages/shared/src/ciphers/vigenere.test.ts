@@ -1,6 +1,6 @@
 import { vigenereEncrypt, vigenereDecrypt, calculateIC } from './vigenere';
 
-describe('Vigenère Cipher', () => {
+describe('Vigenere Cipher', () => {
     it('encrypts classic vigenere correctly', () => {
         const result = vigenereEncrypt('ATTACKATDAWN', { key: 'LEMON' });
         expect(result.ciphertext).toBe('LXFOPVEFRNHR');

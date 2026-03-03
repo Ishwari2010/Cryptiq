@@ -7,7 +7,7 @@ export function VigenereView() {
     return (
         <BaseCipherUI
             cipherId="vigenere"
-            name="VigenÃ¨re Cipher"
+            name="Vigenere Cipher"
             defaultOptions={{ key: 'LEMON', variant: 'classic', preserveCase: true, stripPunctuation: false }}
             clientEncrypt={(pt, opts) => vigenereEncrypt(pt, opts as VigenereOptions)}
             clientDecrypt={(ct, opts) => vigenereDecrypt(ct, opts as VigenereOptions)}

@@ -84,7 +84,7 @@ export function guessCipher(ciphertext: string): CipherGuess[] {
     } else {
         // Low IC means polyalphabetic or polygraphic
         guesses.push({
-            cipher: 'Vigenère / Hill / Playfair',
+            cipher: 'Vigenere / Hill / Playfair',
             confidence: 0.8,
             notes: [
                 `IC is ${ic.toFixed(3)} (lower than English 0.066).`,
@@ -94,7 +94,7 @@ export function guessCipher(ciphertext: string): CipherGuess[] {
 
         // Playfair specific heuristics
         if (!clean.includes('J') && clean.length % 2 === 0) {
-            guesses.find(g => g.cipher.includes('Vigenère'))!.confidence -= 0.1;
+            guesses.find(g => g.cipher.includes('Vigenere'))!.confidence -= 0.1;
             guesses.push({
                 cipher: 'Playfair',
                 confidence: 0.6,

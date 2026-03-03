@@ -15,7 +15,7 @@ export function vigenereEncrypt(plaintext: string, options: VigenereOptions): Ci
 
     const cleanKey = key.replace(/[^A-Za-z]/g, '').toUpperCase();
     if (cleanKey.length === 0) {
-        throw new Error('Vigenère key must contain at least one letter.');
+        throw new Error('Vigenere key must contain at least one letter.');
     }
 
     steps.push({
@@ -45,7 +45,7 @@ export function vigenereEncrypt(plaintext: string, options: VigenereOptions): Ci
     steps.push({
         stepNumber: stepNumber++,
         title: 'Protocol Info',
-        explanation: `Using ${variant === 'autokey' ? 'Autokey' : 'Classic'} Vigenère protocol.`
+        explanation: `Using ${variant === 'autokey' ? 'Autokey' : 'Classic'} Vigenere protocol.`
     });
 
     let ciphertext = '';
@@ -112,7 +112,7 @@ export function vigenereDecrypt(ciphertext: string, options: VigenereOptions): C
 
     const cleanKey = key.replace(/[^A-Za-z]/g, '').toUpperCase();
     if (cleanKey.length === 0) {
-        throw new Error('Vigenère key must contain at least one letter.');
+        throw new Error('Vigenere key must contain at least one letter.');
     }
 
     steps.push({
@@ -142,7 +142,7 @@ export function vigenereDecrypt(ciphertext: string, options: VigenereOptions): C
     steps.push({
         stepNumber: stepNumber++,
         title: 'Protocol Info',
-        explanation: `Using ${variant === 'autokey' ? 'Autokey' : 'Classic'} Vigenère protocol.`
+        explanation: `Using ${variant === 'autokey' ? 'Autokey' : 'Classic'} Vigenere protocol.`
     });
 
     let plaintext = '';

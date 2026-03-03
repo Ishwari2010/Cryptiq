@@ -4,7 +4,7 @@ Welcome to Cryptiq! This toolkit allows you to explore classical ciphers in an e
 
 ## Features
 
-- **Six Classical Ciphers**: Caesar, Vigenère, Hill, Playfair, Rail Fence, and Columnar Transposition.
+- **Six Classical Ciphers**: Caesar, Vigenere, Hill, Playfair, Rail Fence, and Columnar Transposition.
 - **Step-by-Step Explanations**: Enable "Explain Steps" to see the mathematical and logical transformations that occurred during encryption or decryption.
 - **Local Mode**: For maximum privacy, keep "Local Mode" checked. All operations will happen entirely in your browser without communicating with our servers.
 - **Cryptanalysis**: Use built-in heuristics to analyze ciphertexts and automatically detect the likely cipher used based on frequency analysis and Index of Coincidence (IC).
@@ -20,7 +20,7 @@ Welcome to Cryptiq! This toolkit allows you to explore classical ciphers in an e
 
 - **Hill Cipher**: Uses matrix multiplication modulo 26. Not all matrices are valid (the determinant must be coprime with 26). The UI will let you know if your key matrix is invalid.
 - **Playfair Cipher**: Uses a 5x5 grid (J is merged with I). Double letters are split using the "Filler Char" (default X).
-- **Vigenère Autokey**: The keystream is formed by appending the plaintext (or recovered plaintext) to the secret keyword.
+- **Vigenere Autokey**: The keystream is formed by appending the plaintext (or recovered plaintext) to the secret keyword.
 
 ## Attack Tutorial: Breaking the Caesar Cipher
 

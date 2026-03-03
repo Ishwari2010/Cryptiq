@@ -12,7 +12,7 @@ function App() {
   const [activeTab, setActiveTab] = useState<CipherTab>('caesar');
   const tabs: { id: CipherTab, label: string }[] = [
     { id: 'caesar', label: 'Caesar Cipher' },
-    { id: 'vigenere', label: 'VigenÃ¨re Cipher' },
+    { id: 'vigenere', label: 'Vigenere Cipher' },
     { id: 'hill', label: 'Hill Cipher' },
     { id: 'playfair', label: 'Playfair Cipher' },
     { id: 'railfence', label: 'Rail Fence Cipher' },

@@ -11,6 +11,7 @@ export function RSAView() {
 
     const [result, setResult] = useState<RSAResult | null>(null);
     const [error, setError] = useState<string | null>(null);
+    const [copied, setCopied] = useState(false);
 
     const handleCalculate = () => {
         setError(null);
@@ -38,6 +39,13 @@ export function RSAView() {
         link.download = `rsa_result.txt`;
         link.click();
         URL.revokeObjectURL(url);
+    };
+
+    const handleCopy = () => {
+        if (!result) return;
+        navigator.clipboard.writeText(result.encrypted || result.decrypted || '');
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
     };
 
     return (
@@ -121,10 +129,13 @@ export function RSAView() {
                                 </label>
                                 <div className="flex items-center gap-2">
                                     <button
-                                        onClick={() => navigator.clipboard.writeText(result.encrypted || result.decrypted || '')}
-                                        className="text-xs text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium px-3 py-1.5 bg-blue-50/50 dark:bg-blue-900/30 hover:bg-blue-100 dark:hover:bg-blue-900/50 rounded-md border border-blue-100 dark:border-blue-800 transition-colors"
+                                        onClick={handleCopy}
+                                        className={`text-xs font-medium px-3 py-1.5 rounded-md border transition-colors ${copied
+                                                ? 'bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 border-green-200 dark:border-green-800'
+                                                : 'text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 bg-blue-50/50 dark:bg-blue-900/30 hover:bg-blue-100 dark:hover:bg-blue-900/50 border-blue-100 dark:border-blue-800'
+                                            }`}
                                     >
-                                        Copy Result
+                                        {copied ? 'Copied ✓' : 'Copy Result'}
                                     </button>
                                     <button
                                         onClick={handleDownload}
